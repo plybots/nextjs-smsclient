@@ -1,0 +1,61 @@
+html,
+body,
+.container {
+  height: 100%;
+  margin: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/***************
+/ Grid layout
+***************/
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 60px 100% 60px;
+  grid-auto-rows: 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    'header header'
+    'main main'
+    'footer footer';
+}
+
+.header {
+  grid-area: header;
+}
+
+.footer {
+  grid-area: footer;
+}
+
+.main {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  grid-template-rows: 60px 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    'sidenav contentheader'
+    'sidenav content';
+  grid-area: main;
+}
+
+.sidenav {
+  grid-area: sidenav;
+}
+
+.content {
+  grid-area: content;
+}
+
+.contentheader {
+  grid-area: contentheader;
+}
